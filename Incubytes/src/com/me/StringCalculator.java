@@ -16,7 +16,7 @@ public class StringCalculator {
 		if (!numbersString.trim().isEmpty()) {
 			for (String number : numbersArray) {
 				if (!number.trim().isEmpty()) {
-					result += Integer.parseInt(number);
+					result += Integer.parseInt(number.trim());
 				}
 			}
 		}
