@@ -3,7 +3,8 @@ package com.me;
 public class StringCalculator {
 
 	public static final int add(final String numbers) {
-		String[] numbersArray = numbers.split(",");
+		//regex changed and added newline also in split
+		String[] numbersArray = numbers.split(",|n");
 		int result = add(numbers, numbersArray);
 		return result;
 	}
