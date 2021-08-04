@@ -9,6 +9,8 @@ public class StringCalculator {
 		if (len > 2) {
 			throw new RuntimeException("Max 2 number are allowed.");
 		} else {
+			// if String contains other than number 
+			//then this method will throw exception and code will break.
 			checkIfItsANumber(numbersArray);
 		}
 		return result;
