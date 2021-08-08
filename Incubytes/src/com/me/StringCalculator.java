@@ -4,9 +4,15 @@ public class StringCalculator {
 
 	public static final int add(final String numbers) {
 		//regex changed and added newline also in split
-		String[] numbersArray = numbers.split(",|n");
-		int result = add(numbers, numbersArray);
-		return result;
+		String delimiter = ",|n";
+	    String modifiedNumdersSting = numbers;
+	    if (numbers.startsWith("//")) {
+	        int delimiterIndex = numbers.indexOf("//") + 2;
+	        delimiter = numbers.substring(delimiterIndex, delimiterIndex + 1);
+	        modifiedNumdersSting = numbers.substring(numbers.indexOf("n") + 1);
+	    }
+	    String [] numbersArray = modifiedNumdersSting.split(delimiter);
+	    return add(modifiedNumdersSting, numbersArray);
 	}
 
 	private static int add(String numbersString, String[] numbersArray) {
