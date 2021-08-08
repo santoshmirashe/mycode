@@ -38,7 +38,7 @@ public class StringCalculator {
 	}
 
 	public static void main(String[] args) {
-		String str = "//;n67;-3;1";
+		String str = "//—:n1—2—3";
 		System.out.println(add(str));
 	}
 }
