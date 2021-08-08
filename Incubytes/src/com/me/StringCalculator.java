@@ -19,10 +19,16 @@ public class StringCalculator {
 		// this method will return 0 if the string is empty else it will add the
 		// numbers
 		int result = 0;
+		int numberIntValue = 0;
 		if (!numbersString.trim().isEmpty()) {
 			for (String number : numbersArray) {
-				if (!number.trim().isEmpty()) {
-					result += Integer.parseInt(number.trim());
+				if (!number.trim().isEmpty()) 
+				{
+					numberIntValue  = Integer.parseInt(number.trim());
+					if (numberIntValue < 0) {
+						throw new RuntimeException("Negative numbers are not allowed.");
+					}
+					result += numberIntValue;
 				}
 			}
 		}
@@ -30,7 +36,7 @@ public class StringCalculator {
 	}
 
 	public static void main(String[] args) {
-		String str = "//;n67;3;1";
+		String str = "//;n67;-3;1";
 		System.out.println(add(str));
 	}
 }
