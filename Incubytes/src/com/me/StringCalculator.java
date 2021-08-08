@@ -5,14 +5,14 @@ public class StringCalculator {
 	public static final int add(final String numbers) {
 		//regex changed and added newline also in split
 		String delimiter = ",|n";
-	    String modifiedNumdersSting = numbers;
+	    String modifiedNumbersSting = numbers;
 	    if (numbers.startsWith("//")) {
 	        int delimiterIndex = numbers.indexOf("//") + 2;
 	        delimiter = numbers.substring(delimiterIndex, delimiterIndex + 1);
-	        modifiedNumdersSting = numbers.substring(numbers.indexOf("n") + 1);
+	        modifiedNumbersSting = numbers.substring(numbers.indexOf("n") + 1);
 	    }
-	    String [] numbersArray = modifiedNumdersSting.split(delimiter);
-	    return add(modifiedNumdersSting, numbersArray);
+	    String [] numbersArray = modifiedNumbersSting.split(delimiter);
+	    return add(modifiedNumbersSting, numbersArray);
 	}
 
 	private static int add(String numbersString, String[] numbersArray) {
@@ -30,7 +30,7 @@ public class StringCalculator {
 	}
 
 	public static void main(String[] args) {
-		String str = "1,2";
+		String str = "//;n67;3;1";
 		System.out.println(add(str));
 	}
 }
